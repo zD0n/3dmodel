@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://d1b2jrn8dihxt"]
+
+[ext_resource type="Script" uid="uid://dut6kivooenjn" path="res://Scene/main.gd" id="1_g6ejq"]
+[ext_resource type="PackedScene" uid="uid://n5rh1glerru" path="res://Scene/Model.tscn" id="1_xhtwi"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g6ejq"]
+albedo_color = Color(0, 0.136612, 0.142586, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_djkur"]
+material = SubResource("StandardMaterial3D_g6ejq")
+
+[node name="Main" type="Node3D"]
+script = ExtResource("1_g6ejq")
+
+[node name="Model" parent="." instance=ExtResource("1_xhtwi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.1405, 0, 0)
+
+[node name="Model2" parent="." instance=ExtResource("1_xhtwi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.69901, 0, 0)
+
+[node name="Model3" parent="." instance=ExtResource("1_xhtwi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5265, 0, 0)
+
+[node name="Model4" parent="." instance=ExtResource("1_xhtwi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.88299, 0, 0)
+
+[node name="CameraAngle" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.979575, 0.201078, 0, -0.201078, 0.979575, 0, 5, 0)
+
+[node name="Camera3D" type="Camera3D" parent="CameraAngle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 19)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.944583, 0.328273, 0, -0.328273, 0.944583, 0, 11.4832, 20.6006)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(469.43, 0.00010781, -0.222486, -0.396376, 0.127393, 0.519771, 0.424334, -0.000268398, 246.615, -0.0168037, -0.484601, -0.0159988)
+mesh = SubResource("BoxMesh_djkur")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(469.43, 0, 0, 0, -5.56853e-09, -246.616, 0, 0.127393, -1.07799e-05, 0, 0, -30)
+mesh = SubResource("BoxMesh_djkur")
